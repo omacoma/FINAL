@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Timers;
 using System.Threading;
 using System.Diagnostics;
-using System.Drawing.Graphics;
 
 
 namespace WindowsFormsApplication2
@@ -21,28 +20,33 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
-        class point{
-            int x,y;
+        class Point
+        {
+            float x, y;
         }
-        List<point> L;
+        List<Point> L;
         private void Form1_Load(object sender, EventArgs e)
         {
           
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, Graphics g)
         {
-            Graphics g;
             Pen pen = new Pen(Color.Red);
             g.DrawEllipse(pen, g.DpiX, g.DpiY, 2, 2);
-            point a;
-            a.x = g.DpiX;
-            a.y = global.DpiY;
-            L.Add(a);
+            Point p;
+            p.x = g.DpiX;
+            p.y = g.DpiY;
+            L.Add(p);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            foreach (Point p in L)
+            {
+                p.x++,p.y++;
+            }
+
 
         }
 
