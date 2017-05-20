@@ -13,7 +13,6 @@ namespace Task1
         {
             DirectoryInfo papka = new DirectoryInfo(@"C:\Users\a_krekesova\Desktop\Task1");
             
-
         }
     }
 }
