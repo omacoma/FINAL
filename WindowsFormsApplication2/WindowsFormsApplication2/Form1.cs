@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using System.Threading;
 
 namespace WindowsFormsApplication2
 {
@@ -20,6 +22,12 @@ namespace WindowsFormsApplication2
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            
         }
 
     }
