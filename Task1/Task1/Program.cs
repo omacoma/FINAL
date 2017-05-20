@@ -11,7 +11,6 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            DirectoryInfo papka = new DirectoryInfo(@"C:\Users\a_krekesova\Desktop\Task1");
             
         }
     }
