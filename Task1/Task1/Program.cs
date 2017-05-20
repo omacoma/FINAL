@@ -15,25 +15,21 @@ namespace Task1
             FileInfo[] files = papka.GetFiles();
             foreach (FileInfo file in files)
             {
-                Console.Write(file.FullName);
-                StreamReader sr = new StreamReader(file.FullName+" ");
+                Console.Write(file.Name + " ");
+                StreamReader sr = new StreamReader(file.FullName);
                 string s = sr.ReadToEnd();
                 char b=' ';
                 string ss="";
                 foreach (char c in s)
                 {
-                    if (b == ' ') {
+                    if (b == ' ' && ss.Length>0) {
+                       // Console.WriteLine(ss);
+                        //Console.ReadKey();
                         int n = int.Parse(ss);
-                        int m = 1;
-                        for (int i = 1; i <= 15; i++)
-                        {
-                            if (m == n)
-                            {
-                                Console.Write(m.ToString()+ " ");
-                            }
-                            m *= 2;
-                        }
-                            ss = ""; 
+                        int m = n;
+                        while (m % 2 == 0) { m /= 2; }
+                        if (m == 1) Console.Write(n.ToString() + " ");
+                       
                     }
                     else
                     {
@@ -44,7 +40,9 @@ namespace Task1
                     }
                     b = c;
                 }
+                Console.WriteLine();
             }
+            Console.ReadKey();
         }
     }
 }
