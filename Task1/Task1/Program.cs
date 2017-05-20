@@ -18,14 +18,13 @@ namespace Task1
                 Console.Write(file.Name + " ");
                 StreamReader sr = new StreamReader(file.FullName);
                 string s = sr.ReadToEnd();
-                char b=' ';
                 string ss="";
                 foreach (char c in s)
                 {
-                    if ((b <'0'||b>'9') && ss.Length>0) {
+                    if ((c<'0'||c>'9') && ss.Length>0) {
                         int n = int.Parse(ss);
                         int m = n;
-                        while (m % 2 == 0) m /= 2; 
+                        while (m % 2 == 0 && m!=0) m /= 2; 
                         if (m == 1) Console.Write(ss + " ");
                         ss = "";                     
                     }
@@ -36,7 +35,6 @@ namespace Task1
                             ss += c;
                         }
                     }
-                    b = c;
                 }
                 Console.WriteLine();
             }
