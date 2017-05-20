@@ -22,14 +22,12 @@ namespace Task1
                 string ss="";
                 foreach (char c in s)
                 {
-                    if (b == ' ' && ss.Length>0) {
-                       // Console.WriteLine(ss);
-                        //Console.ReadKey();
+                    if ((b <'0'||b>'9') && ss.Length>0) {
                         int n = int.Parse(ss);
                         int m = n;
-                        while (m % 2 == 0) { m /= 2; }
-                        if (m == 1) Console.Write(n.ToString() + " ");
-                       
+                        while (m % 2 == 0) m /= 2; 
+                        if (m == 1) Console.Write(ss + " ");
+                        ss = "";                     
                     }
                     else
                     {
